@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <!-- favicon -->
+    <link rel="icon" href="./images/enter.png">
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Delius+Swash+Caps&family=Oregano:ital@0;1&family=Pacifico&display=swap" rel="stylesheet">    <!-- home -->
+    <link rel="stylesheet" href="home.html">
+    <!-- index -->
+    <link rel="stylesheet" href="index.html">
+    <!-- bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!-- main css -->
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Logo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero vh-100 d-flex justify-content-center align-items-center">
+            <div class="container">
+                <div class="row d-flex justify-content-center align-items-center">
+                    <div class="col-md-5 col-sm-6 col-10">
+                        <!-- ? Form -->
+                        <div id="form_register" class="card d-flex justify-content-center align-items-center shadow-lg mt-5">
+                            <!-- close form -->
+                            <span class="icon-close" onclick="closeForm()"><i class="bi bi-x"></i></span>
+                            <div class="card-body d-flex flex-column text-center">
+                                <!-- *Form Title -->
+                                <h2 id="formTitle" class=" text-center">Login</h2>
+                                
+                                <!-- *========== Login Form ============= -->
+                                <div id="loginForm" class="gap-3 d-flex flex-column">
+                                    <!-- ?=========== userEmail ==========-->
+                                    <div class="box text-start">
+                                        <span class="icon"><i class="bi bi-envelope-at-fill"></i></span>
+                                        <input id="userEmail" placeholder=" " type="email" oninput="validateLogin(this ,'emailError')" required>
+                                        <label for="userEmail">Email</label>
+                                        <p id="emailError" class="text-danger fw-medium d-none text-start"> Email is invalid!</p>
+                                    </div>
+                                    <!-- ?========== userPassword ==========-->
+                                    <div class="box text-start">
+                                        <span class="icon eye-toggle"><i class="bi bi-eye-fill"></i></span>
+                                        <span class="icon eye-toggle d-none"><i class="bi bi-eye-slash"></i></span>
+                                        <input id="userPassword" type="password" oninput="validateLogin( this ,'passwordError')" required>
+                                        <label for="userPassword">Password</label>
+                                        <p id="passwordError" class="text-danger fw-medium d-none text-start"> Password is invalid!</p>
+                                    </div>
+                                    <a href="#" class="forgotPassword text-end">Forgot Password?</a>
+                                    <div class="incorrect">
+                                        <p id="loginError" class="text-danger fw-medium d-none text-start">Login error</p>
+                                    </div>
+                                    <!--? loginBtn  -->
+                                    <button id="loginBtn" onclick="login()" class="btn">Login</button>
+                                </div>
+                                <p id="loginMsg">Don’t have an account?  <a href="index.html">Register</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/login.js"></script>
+</body>
+</html>

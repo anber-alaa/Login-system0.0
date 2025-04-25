@@ -1,0 +1,256 @@
+:root{
+    --main-color:#162938;
+    --primary-color: black;
+    --secondry-color: #162938;
+    --border-color:rgba(255, 255, 255, 0.557);
+}
+body{
+    color: var(--primary-color) !important;
+    font-family: "DM Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+main{
+    flex: 1;
+}
+.hero{
+    background: linear-gradient(rgba(0, 0, 0, 0.36),rgba(0, 0, 0, 0.393)), url(../images/bg123.jpg) center/cover no-repeat;
+    background-attachment: fixed;
+    max-height: 100dvh;
+}
+.home{
+    background: linear-gradient(rgba(0, 0, 0, 0.36),rgba(0, 0, 0, 0.393)), url(../images/bg123.jpg) center/cover no-repeat;
+    background-attachment: fixed;
+    max-height: auto;
+}
+nav .navbar-brand{
+    font-size: 1.5em;
+    font-family: "Pacifico", cursive;
+    color: white !important;
+    font-weight: 400;
+}
+nav .navbar-brand:hover{
+    text-decoration: none !important;
+    color: rgb(255, 255, 255) !important;
+}
+.navbar-nav{
+    gap: 15px
+}
+.navbar-nav a{
+    color: white !important;
+    font-size: 1em;
+    font-weight: 500;
+}
+.navbar-nav a:hover{
+    text-decoration: none !important;
+}
+.active{
+    border: 3px solid white;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.card-body h2{
+    font-size: 2em;
+    color: var(--main-color);
+}
+.card{
+    position: relative;
+    max-width: 400px;
+    height: 440px;
+    background: url("../images/bg123.jpg") center/cover no-repeat;
+    height: auto;
+    padding: 20px;
+    margin-bottom: 40px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+.card .icon-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--border-color);
+    font-size: 1.7em;
+    color: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+.card .card-body{
+    width: 100%;
+    padding: 30px;
+}
+.box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid var(--main-color);
+    margin: 5px 0;
+}
+.box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: var(--main-color);
+    font-weight: 500;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: var(--main-color);
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+.box input:focus ~ label,
+.box input:valid ~ label {
+    top: -5px;
+    font-size: 0.85em;
+    color: var(--main-color);
+}
+.box .icon{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: var(--main-color);
+    line-height: 57px;
+}
+.box .eye-toggle{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: var(--main-color);
+    line-height: 57px;
+}
+.forgotPassword{
+    color: var(--main-color);
+    text-decoration: none;
+    font-size: .875rem;
+}
+.forgotPassword:hover{
+    text-decoration: underline;
+}
+
+#registerMsg , #loginMsg{
+    color: var(--main-color);
+    font-size: .875rem;
+}
+#registerMsg a , #loginMsg a {
+    color: white !important;
+    text-decoration: none;
+}  
+
+a:hover{
+    text-decoration: underline !important;
+}
+
+#registerBtn , #loginBtn{
+    background-color: var(--secondry-color);
+    color: white;
+}
+
+
+
+.loader {
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    position: relative;
+    transform: rotate(45deg);
+  }
+  .loader::before {
+    content: '';  
+    box-sizing: border-box;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 0;
+    top: -24px;
+    animation: animloader 4s ease infinite;
+  }
+  .loader::after {
+    content: '';  
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    animation: animloader2 2s ease infinite;
+  }
+  
+  @keyframes animloader {
+    0% {
+      box-shadow: 0 24px rgba(255, 255, 255, 0), 24px 24px rgba(255, 255, 255, 0), 24px 48px rgba(255, 255, 255, 0), 0px 48px rgba(255, 255, 255, 0);
+    }
+    12% {
+      box-shadow: 0 24px white, 24px 24px rgba(255, 255, 255, 0), 24px 48px rgba(255, 255, 255, 0), 0px 48px rgba(255, 255, 255, 0);
+    }
+    25% {
+      box-shadow: 0 24px white, 24px 24px white, 24px 48px rgba(255, 255, 255, 0), 0px 48px rgba(255, 255, 255, 0);
+    }
+    37% {
+      box-shadow: 0 24px white, 24px 24px white, 24px 48px white, 0px 48px rgba(255, 255, 255, 0);
+    }
+    50% {
+      box-shadow: 0 24px white, 24px 24px white, 24px 48px white, 0px 48px white;
+    }
+    62% {
+      box-shadow: 0 24px rgba(255, 255, 255, 0), 24px 24px white, 24px 48px white, 0px 48px white;
+    }
+    75% {
+      box-shadow: 0 24px rgba(255, 255, 255, 0), 24px 24px rgba(255, 255, 255, 0), 24px 48px white, 0px 48px white;
+    }
+    87% {
+      box-shadow: 0 24px rgba(255, 255, 255, 0), 24px 24px rgba(255, 255, 255, 0), 24px 48px rgba(255, 255, 255, 0), 0px 48px white;
+    }
+    100% {
+      box-shadow: 0 24px rgba(255, 255, 255, 0), 24px 24px rgba(255, 255, 255, 0), 24px 48px rgba(255, 255, 255, 0), 0px 48px rgba(255, 255, 255, 0);
+    }
+  }
+  
+  @keyframes animloader2 {
+    0% {
+      transform: translate(0, 0) rotateX(0) rotateY(0);
+    }
+    25% {
+      transform: translate(100%, 0) rotateX(0) rotateY(180deg);
+    }
+    50% {
+      transform: translate(100%, 100%) rotateX(-180deg) rotateY(180deg);
+    }
+    75% {
+      transform: translate(0, 100%) rotateX(-180deg) rotateY(360deg);
+    }
+    100% {
+      transform: translate(0, 0) rotateX(0) rotateY(360deg);
+    }
+  }
+      
