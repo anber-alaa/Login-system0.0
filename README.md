@@ -1,4 +1,4 @@
-# 🔐 Simple Front-End Authentication System
+# 🔐 Simple Authentication System
 
 A **basic front-end authentication system** built using **HTML**, **CSS**, and **JavaScript**, with user credentials stored in the browser’s `localStorage`.  
 Ideal for learning how authentication logic works on the front end without a backend server.
